@@ -69,10 +69,20 @@ class Cache implements CacheInterface
     /**
      * @param $key
      * @param $value
+     * @return void
      */
     public function set($key, $value)
     {
         static::$adapter->setItem($key, $value);
+    }
+
+    /**
+     * @param $key
+     * @return void
+     */
+    public function remove($key)
+    {
+        static::$adapter->removeItem($key);
     }
 
     /**
